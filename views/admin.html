@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10">
+      <a href="#/new">
+        <button class="btn btn-default pull-right">
+        </button>
+      </a>
+      <a href="#/">
+        <button class="btn btn-default pull-right">
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Airplane</h1>
+      <h2>Administrator</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" ng-repeat="product in mainCtrl.products">
+      <div class="form-group" ng-submit="mainCtrl.editProduct(product)">
+        <label for="">Product Name</label>
+        <input class="form-control" type="text" ng-model="product.name" placeholder="{{product.name}}" required>
+      </div>
+      <div class="form-group">
+        <label for="">Product Image URL</label>
+        <input class="form-control" type="text" ng-model="product.url" placeholder="{{product.url}}" required>
+      </div>
+      <img class="prodimg" src="{{product.url}}" alt="">
+      <div class="form-group">
+        <label for="">Product Details</label>
+        <textarea class="form-control" rows="3" ng-model="product.details" placeholder="{{product.details}}" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="">Product Price</label>
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+          <input type="text" class="form-control" id="exampleInputAmount" ng-model="product.price" placeholder="{{product.price}}" required>
+        </div>
+      </div>
+      <button class="btn btn-default" ng-click="mainCtrl.deleteProduct(product)">
+      </button>
+    </div>
+  </div>
+</div>
