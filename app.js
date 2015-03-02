@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  angular.module('AmazonApp', [
+  angular.module('AirplaneApp', [
     'ngRoute'
   ])
   .config(function ($routeProvider) {
